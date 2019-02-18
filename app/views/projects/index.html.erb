@@ -1,0 +1,9 @@
+<h1>Name List</h1>
+
+
+<p>Name</p>
+<% @projects.each do |user| %>
+<ul>
+<li><%= user.first_name + user.last_name %></li>
+</ul>
+<% end %>
