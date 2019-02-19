@@ -3,7 +3,9 @@
 
 <p>Name</p>
 <% @projects.each do |user| %>
-<ul>
-<li><%= user.first_name + user.last_name %></li>
-</ul>
+  <ul>
+    <li><%= user.first_name + user.last_name %></li>
+  </ul>
 <% end %>
+
+<%= link_to 'New Name', new_project_path %>
