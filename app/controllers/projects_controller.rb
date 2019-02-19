@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all
+    @q = Project.ransack(params[:q])
+    @projects = @q.result(distinct: true)
   end
   
   def new
@@ -21,4 +22,8 @@ class ProjectsController < ApplicationController
   def project_params
     params.require(:project).permit(:first_name, :last_name, :age)
   end  
+  
+  def search_params
+    params.require(:q).permit!
+  end
 end
